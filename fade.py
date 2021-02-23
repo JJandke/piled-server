@@ -21,12 +21,12 @@ else:
 logging.basicConfig(filename="/home/pi/log/piled.log", level=logging.DEBUG)
 pi = pigpio.pi()
 now = datetime.now()
-speed = 0.1
+speed = 0.1     # The smaller the variable, the faster the colors will change.
 log_time = now.strftime("%a-%d.%m.%Y-%H:%M:%S ")
 
 
 def run():
-    while os.path.exists("/home/pi/.server/fade.txt"):
+    while os.path.exists("/home/pi/.server/fade.txt"):              # Check if script is allowed to be executed. (Only if fade.txt exists)
         col_b1 = 255
         col_r1 = 0
         col_r2 = 255
@@ -38,9 +38,9 @@ def run():
             pi.set_PWM_dutycycle(16, col_r1)
             col_b1 = col_b1 - 1
             col_r1 = col_r1 + 1
-            if not os.path.exists("/home/pi/.server/fade.txt"):
+            if not os.path.exists("/home/pi/.server/fade.txt"):     # Check if script is allowed to be executed. (Only if fade.txt exists)
                 sys.exit(0)
-            sleep(speed)
+            sleep(speed)                                            # sleep (speed) seconds. So a smaller number means faster fading.
         while col_r2 > -1 and col_g2 < 255:
             pi.set_PWM_dutycycle(16, col_r2)
             pi.set_PWM_dutycycle(20, col_g2)
@@ -77,7 +77,8 @@ try:
         run()
     else:
         logging.info("{0}Set color: Blue".format(log_time))
+        sleep(1)
         run()
 
 except Exception as e:
-    logging.debug("{0}Could not set color to Blue: {1}".format(log_time, e))
+    logging.debug("{0}Could not start fading: {1}".format(log_time, e))
