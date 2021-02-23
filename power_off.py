@@ -26,8 +26,8 @@ try:
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(12, GPIO.OUT)
-    GPIO.output(12, GPIO.HIGH)
-    logging.info("{0}Power on".format(log_time))
+    GPIO.output(12, GPIO.LOW)
+    logging.info("{0}Power off".format(log_time))
 
 except Exception as e:
-    logging.debug("{0}Could not power on: {1}".format(log_time, e))
+    logging.debug("{0}Could not power off: {1}".format(log_time, e))
