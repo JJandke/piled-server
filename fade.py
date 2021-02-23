@@ -72,11 +72,11 @@ try:
     # Terminate strobe if it is running.
     if os.path.exists("/home/pi/.server/multistrobe.txt"):
         os.remove("/home/pi/.server/multistrobe.txt")
-        logging.info("{0}Set color: Blue".format(log_time))
+        logging.info("{0}Set color: Fade".format(log_time))
         sleep(1)
         run()
     else:
-        logging.info("{0}Set color: Blue".format(log_time))
+        logging.info("{0}Set color: Fade".format(log_time))
         sleep(1)
         run()
 
