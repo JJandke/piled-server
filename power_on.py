@@ -8,15 +8,12 @@ import RPi.GPIO as GPIO
 import logging
 import os
 
-# Create log file for this script
-# Running the script via cronjob at boot will delete the log file each time to save disk space and keep the file more organized.
-if os.path.isfile("/home/pi/log/piled.log"):
-    os.remove("/home/pi/log/piled.log")
+# Create log file for this script.
+if not os.path.isfile("/home/pi/log/piled.log"):
     f = open("/home/pi/log/piled.log", "x")
     f.close()
 else:
-    f = open("/home/pi/log/piled.log", "x")
-    f.close()
+    pass
 
 logging.basicConfig(filename="/home/pi/log/piled.log", level=logging.DEBUG)
 now = datetime.now()
