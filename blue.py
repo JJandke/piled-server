@@ -32,8 +32,8 @@ try:
     sleep(1)
     pi.set_PWM_dutycycle(16, 0)     # red
     pi.set_PWM_dutycycle(20, 0)     # green
-    pi.set_PWM_dutycycle(21, 0)     # blue
-    logging.info("{0}Set color: Black".format(log_time))
+    pi.set_PWM_dutycycle(21, 250)   # blue
+    logging.info("{0}Set color: Blue".format(log_time))
 
 except Exception as e:
-    logging.debug("{0}Could not set color to Black: {1}".format(log_time, e))
+    logging.debug("{0}Could not set color to Blue: {1}".format(log_time, e))

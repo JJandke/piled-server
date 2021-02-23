@@ -8,7 +8,7 @@ import RPi.GPIO as GPIO
 import logging
 import os
 
-# Create log file for this script.
+# Create log file if it does not exist.
 if not os.path.isfile("/home/pi/log/piled.log"):
     f = open("/home/pi/log/piled.log", "x")
     f.close()
