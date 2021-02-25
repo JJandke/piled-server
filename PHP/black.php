@@ -1,6 +1,6 @@
 <?php
 
-$command = escapeshellcmd('/home/pi/Python/App/black.py');
+$command = escapeshellcmd('/home/pi/Code/App/black.py');
 $output = shell_exec($command);
 echo $output;
 
