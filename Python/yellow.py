@@ -33,7 +33,7 @@ try:
     pi.set_PWM_dutycycle(16, 255)   # red
     pi.set_PWM_dutycycle(20, 145)   # green
     pi.set_PWM_dutycycle(21, 0)     # blue
-    logging.info("{0}Set color: Turquoise".format(log_time))
+    logging.info("{0}Set color: Yellow".format(log_time))
 
 except Exception as e:
-    logging.debug("{0}Could not set color to Turquoise: {1}".format(log_time, e))
+    logging.debug("{0}Could not set color to Yellow: {1}".format(log_time, e))
