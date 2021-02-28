@@ -29,7 +29,7 @@ try:
         os.remove("/home/pi/.server/multistrobe.txt")
 
     # Waiting one second is necessary, otherwise requested color will be overwritten by the last fade command.
-    sleep(1)
+    sleep(0.5)
     pi.set_PWM_dutycycle(16, 0)     # red
     pi.set_PWM_dutycycle(20, 250)   # green
     pi.set_PWM_dutycycle(21, 0)     # blue

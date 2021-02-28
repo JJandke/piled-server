@@ -82,11 +82,11 @@ try:
     if os.path.exists("/home/pi/.server/fade.txt"):
         os.remove("/home/pi/.server/fade.txt")
         logging.info("{0}Set color: Multistrobe".format(log_time))
-        sleep(1)
+        sleep(0.5)
         run()
     else:
         logging.info("{0}Set color: Multistrobe".format(log_time))
-        sleep(1)
+        sleep(0.5)
         run()
 
 except Exception as e:
