@@ -2,6 +2,35 @@
 Server side code for the Piled project. (Controlling an RGB strip using an Android app and Raspberry Pi.)
 
 ------
+# piled-server
+
+Server side code for the Piled project. (Controlling an RGB strip using an Android app and Raspberry Pi.)
+
+------
+
+## Hardware
+
+**To connect the LED strip to the Raspberry Pi, you still need the following components:**
+
+- [The 12V LED strip](https://www.amazon.de/dp/B087B49JD7/) 
+
+- [Circuit board](https://www.amazon.de/dp/B0734XYJPM/) or [breadboard](https://www.amazon.de/dp/B07VFK5CRP/)
+
+- [Jumper cables](https://www.amazon.de/dp/B01EV70C78/)
+
+- [3x N-channel MosFets](https://www.amazon.de/dp/B01FUSRARW/)
+
+
+
+**I have now connected the LED strip as following:**
+
+- First we have to solder three **MosFets** to the board or plug them to the breadboard. When soldering you should be careful not to solder too hot, otherwise the MosFets will break quickly.
+- Then we have to connect three **GPIO** pins `(e.g. GPIO16, GPIO20, GPIO21)` with jumper cables to the **Gate** of the MosFet. Further we connect the **GND** of the Pi to the blue **GND** **rail** on the breadboard.
+- As a 3rd step we connect the **Source** pins of the MosFets to the same **GND** rail where we connected the GND of the Raspberry Pi.
+- Now we only have to connect the LED strip. For this we connect the **+12V** of the LED band to the positive red **rail** of the breadboard.
+  The three **colors** are connected to the **Drain** pin of the MosFet.
+- If we now connect the **+12V** and **GND** of the power supply to the **respective** **rails** of the breadboard, the LED band could already be controlled.
+
 
 To be able to use the Raspberry Pi as a server, it still needs to be configured a bit. 
 
