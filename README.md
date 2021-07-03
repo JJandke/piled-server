@@ -34,8 +34,13 @@ Server side code for the Piled project. (Controlling an RGB strip using an Andro
 
 
 - To **switch** the LED band on and off, we **disconnect** the **+12V** of the power supply from the breadboard and connect it to one of the **relay** contacts. From the second contact we then go to the board, so that in the **unswitched** state **no** **current** flows through the relay.
-- To **switch the relay**, we need to connect +5V (VCC) and GND (GND) from the Raspberry Pi as power supply to the relay module. We also need GPIO 12 (IN1/On-Off) and GPIO 13 (In2/Sleep) to switch the relays. The jumper has to be set between VCC and RVCC. Now the relay would theoretically already work, but the Raspi would **not** **be** **galvanically** **separated** from the relay module.
+- To **switch the relay**, we need to connect +5V (VCC) and GND (GND) from the Raspberry Pi as power supply to the relay module.
+- We also need GPIO 12 (IN1/On-Off) and GPIO 13 (In2/Sleep) to switch the relays.
+- The jumper has to be set between VCC and RVCC. 
+  
+Now the relay would theoretically already work, but the RPi would **not** **be** **galvanically** **separated** from the relay module. To achieve this by using the optocouplers on the PCB, the jumper must be removed and a **external voltage** of +5V must be connected to RVCC and GND.
 
+**Everything** is now **done** and we can move on to the software part.
 
 
 ## Software
