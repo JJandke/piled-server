@@ -43,6 +43,7 @@ Now the relay would theoretically already work, but the RPi would **not** **be**
 **Everything** is now **done** and we can move on to the software part.
 
 
+
 ## Software
 
 To be able to use the Raspberry Pi as a server, it still needs to be configured a bit.  
