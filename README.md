@@ -42,7 +42,8 @@ Server side code for the Piled project. (Controlling an RGB strip using an Andro
 
 
   
-Now the relay would theoretically already work, but the RPi would **not** **be** **galvanically** **separated** from the relay module. To achieve this by using the optocouplers on the PCB, the jumper must be removed and a **external voltage** of +5V must be connected to RVCC and GND.
+Now the relay would theoretically already work, but the RPi would **not** **be** **galvanically** **separated** from the relay module.
+- To achieve this by using the optocouplers on the PCB, the jumper must be removed and a **external voltage** of +5V must be connected to RVCC and GND.
 
 **Everything** is now **done** and we can move on to the software part.
 
