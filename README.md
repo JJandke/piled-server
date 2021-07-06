@@ -31,7 +31,7 @@ Server side code for the Piled project. (Controlling an RGB strip using an Andro
   The three **colors** are connected to the **Drain** pin of the MosFet.
 - If we now connect the **+12V** and **GND** of the power supply to the **respective** **rails** of the breadboard, the LED band could already be controlled.
 
-
+![OnlyLedStripeAndPi](https://user-images.githubusercontent.com/56551925/124629811-15ee8500-de82-11eb-911c-0ada95307a5e.png)
 
 - To **switch** the LED band on and off, we **disconnect** the **+12V** of the power supply from the breadboard and connect it to one of the **relay** contacts. From the second contact we then go to the board, so that in the **unswitched** state **no** **current** flows through the relay.
 - To **switch the relay**, we need to connect +5V (VCC) and GND (GND) from the Raspberry Pi as power supply to the relay module.
