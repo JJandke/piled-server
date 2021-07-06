@@ -37,6 +37,10 @@ Server side code for the Piled project. (Controlling an RGB strip using an Andro
 - To **switch the relay**, we need to connect +5V (VCC) and GND (GND) from the Raspberry Pi as power supply to the relay module.
 - We also need GPIO 12 (IN1/On-Off) and GPIO 13 (In2/Sleep) to switch the relays.
 - The jumper has to be set between VCC and RVCC. 
+
+![LedWithRelay](https://user-images.githubusercontent.com/56551925/124631866-15ef8480-de84-11eb-931e-1f23946a195f.png)
+
+
   
 Now the relay would theoretically already work, but the RPi would **not** **be** **galvanically** **separated** from the relay module. To achieve this by using the optocouplers on the PCB, the jumper must be removed and a **external voltage** of +5V must be connected to RVCC and GND.
 
