@@ -31,21 +31,22 @@ Server side code for the Piled project. (Controlling an RGB strip using an Andro
   The three **colors** are connected to the **Drain** pin of the MosFet.
 - If we now connect the **+12V** and **GND** of the power supply to the **respective** **rails** of the breadboard, the LED band could already be controlled.
 
-![OnlyLedStripeAndPi](https://user-images.githubusercontent.com/56551925/124629811-15ee8500-de82-11eb-911c-0ada95307a5e.png)
+![OnlyLedStripeAndPi](https://user-images.githubusercontent.com/56551925/124948731-40227d00-e011-11eb-9d14-22ba44ef3ddc.png)
 
 - To **switch** the LED band on and off, we **disconnect** the **+12V** of the power supply from the breadboard and connect it to one of the **relay** contacts. From the second contact we then go to the board, so that in the **unswitched** state **no** **current** flows through the relay.
 - To **switch the relay**, we need to connect +5V (VCC) and GND (GND) from the Raspberry Pi as power supply to the relay module.
 - We also need GPIO 12 (IN1/On-Off) and GPIO 13 (In2/Sleep) to switch the relays.
 - The jumper has to be set between VCC and RVCC. 
 
-![LedWithRelay](https://user-images.githubusercontent.com/56551925/124631866-15ef8480-de84-11eb-931e-1f23946a195f.png)
+![LedWithRelay](https://user-images.githubusercontent.com/56551925/124948829-57616a80-e011-11eb-83f4-8797f70f3642.png)
+
 
 
   
 Now the relay would theoretically already work, but the RPi would **not** **be** **galvanically** **separated** from the relay module.
 - To achieve this by using the optocouplers on the PCB, the jumper must be removed and a **external voltage** of +5V must be connected to RVCC and GND.
 
-![LedWithRelayOptc](https://user-images.githubusercontent.com/56551925/124633107-408e0d00-de85-11eb-8c72-e09f281fe4ce.png)
+![LedWithRelayOptc](https://user-images.githubusercontent.com/56551925/124948904-6811e080-e011-11eb-81c9-8101bf0273c3.png)
 
 
 **Everything** is now **done** and we can move on to the software part.
