@@ -57,11 +57,11 @@ Now the relay would theoretically already work, but the RPi would **not** **be**
 
 To be able to use the Raspberry Pi as a server, it still needs to be configured a bit.  
 
-1. **Create a directory for the log files and a log file for cronjobs.**
+1. **Create a directory for the log files and also a log file for cronjobs.**
 
    ```shell
    mkdir log
-   cd /log
+   cd log
    touch cron.log
    cd
    ```
@@ -124,11 +124,11 @@ To be able to use the Raspberry Pi as a server, it still needs to be configured 
 
    
 
-8. **Now add the PHP files under /var/www/html**
+8. **now, add the php files under** `/var/www/html`
 
    
 
-9. **And give the logfile for the piled project the rights so that others than the Pi user can write.**
+9. **And give the logfile for the piled project the appropriate rights so that others than the `pi` user can write.**
 
    ```sh
    sudo chmod 666 /home/pi/log/piled.log
