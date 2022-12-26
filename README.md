@@ -94,7 +94,6 @@ To be able to use the Raspberry Pi as a server, it still needs to be configured 
    sudo systemctl start pigpiod
    sudo systemctl enable pigpiod
    sudo pigpiod
-   
    ```
 
    
