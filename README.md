@@ -42,7 +42,7 @@ Server side code for the Piled project. (Controlling an RGB strip using an Andro
 
 
 
-  
+
 Now the relay would theoretically already work, but the RPi would **not** **be** **galvanically** **separated** from the relay module.
 - To achieve this by using the optocouplers on the PCB, the jumper must be removed and a **external voltage** of +5V must be connected to RVCC and GND.
 
@@ -87,9 +87,12 @@ To be able to use the Raspberry Pi as a server, it still needs to be configured 
 
    
 
-4. **Launch the "pigpiod" service**
+4. **Install and launch the "pigpiod" service**
 
    ```sh
+   sudo apt install pigpio
+   sudo systemctl start pigpiod
+   sudo systemctl enable pigpiod
    sudo pigpiod
    ```
 
