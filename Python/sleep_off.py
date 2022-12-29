@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # from https://github.com/JJandke
-#
 
 from datetime import datetime
 import RPi.GPIO as GPIO
