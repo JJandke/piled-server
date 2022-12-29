@@ -23,7 +23,9 @@ try:
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(13, GPIO.OUT)
+    GPIO.setup(17, GPIO.OUT)
     GPIO.output(13, GPIO.HIGH)
+    GPIO.output(17, GPIO.HIGH)
     logging.info("{0}Sleep on".format(log_time))
 
 except Exception as e:
