@@ -145,11 +145,15 @@ To be able to use the Raspberry Pi as a server, it still needs to be configured 
 
    
 
-10. **For the Python scripts executed by *www-data* to work correctly, read and write permissions for */dev/mem* must be assigned** 
+10. **For the Python scripts executed by *www-data* (the user for apache2) to work correctly, read and write permissions for */dev/mem* must be assigned** 
 
     ```shell
-    sudo chmod g+rw /dev/mem
+    sudo groupadd gpio
+    sudo usermod -a -G gpio www-data
+    sudo grep gpio /etc/group
+    sudo chown root.gpio /dev/gpiomem
+    sudo chmod g+rw /dev/gpiomem
     ```
-
-    At this point, [this page in particular](https://raspberrypi.stackexchange.com/questions/40105/access-gpio-pins-without-root-no-access-to-dev-mem-try-running-as-root) has helped me.
+    
+    At this point, [this page in particular](https://raspberrypi.stackexchange.com/questions/40105/access-gpio-pins-without-root-no-access-to-dev-mem-try-running-as-root) (Mark Tyers's answer) has helped me.
 
