@@ -24,7 +24,7 @@ try:
     GPIO.setwarnings(False)
     GPIO.setup(27, GPIO.OUT)
     GPIO.output(27, GPIO.HIGH)
-    logging.info("{0}Power on".format(log_time))
+    logging.info("{0}Officelight on".format(log_time))
 
 except Exception as e:
-    logging.debug("{0}Could not power on: {1}".format(log_time, e))
+    logging.debug("{0}Could not power officelight on: {1}".format(log_time, e))
