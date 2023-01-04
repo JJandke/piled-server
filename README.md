@@ -154,6 +154,18 @@ To be able to use the Raspberry Pi as a server, it still needs to be configured 
     sudo chown root.gpio /dev/gpiomem
     sudo chmod g+rw /dev/gpiomem
     ```
-    
+
     At this point, [this page in particular](https://raspberrypi.stackexchange.com/questions/40105/access-gpio-pins-without-root-no-access-to-dev-mem-try-running-as-root) (Mark Tyers's answer) has helped me.
+
+    
+
+11. **Add the `www-data` user to the `pi` group and change permission of the `pi` home folder and the `.server` folder**
+
+    ```shell
+    sudo chmod 776 /home/pi
+    sudo chmod 776 /home/pi/.server
+    sudo usermod -a -G pi www-data
+    ```
+
+    
 
